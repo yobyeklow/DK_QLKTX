@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         multi: ["Mulish", "sans-serif"],
         prata: ["Prata", "serif"],
+        barlow: ["Barlow Condensed", "sans-serif"],
       },
       colors: {
         bgColor: "#c7c6b3",
