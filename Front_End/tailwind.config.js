@@ -6,11 +6,13 @@ export default {
       fontFamily: {
         multi: ["Mulish", "sans-serif"],
         prata: ["Prata", "serif"],
-        barlow: ["Barlow Condensed", "sans-serif"],
+        gilda: ["Gilda Display", "serif"],
       },
       colors: {
         bgColor: "#c7c6b3",
         darkGray: "#375c45",
+        brownColor: "#a58356",
+        tanColor: "#d8aa84",
       },
     },
   },

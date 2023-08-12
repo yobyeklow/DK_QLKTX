@@ -9,9 +9,12 @@
   padding: 0.5rem 2rem;
 }
 
-.header-btn:hover button {
-  opacity: 80%;
+.header-btn:hover button,
+.btn-content button:hover {
+  color: orange;
+  background: #ffffff;
 }
+
 .nav-item:hover a {
   color: rgb(250, 167, 13);
 }
@@ -45,9 +48,7 @@
 .aboutSection .content-section > h2 {
   line-height: 1.1;
 }
-.btn-content button:hover {
-  opacity: 80%;
-}
+
 .dormRoom .top-content > h3 {
   padding: 5px 0 16px;
   border-bottom: 0.5px solid white;
@@ -71,7 +72,6 @@
 .dormRoom:hover {
   .bottom-content,
   .overlay {
-    // visibility: unset;
     display: inline-block;
   }
   .overlay {
@@ -84,4 +84,13 @@
     margin-bottom: 20px;
     border-bottom: 0.5px solid rgb(250, 167, 13);
   }
+  .register-btn:hover {
+    background: #ffffff;
+    color: orange;
+  }
+}
+.facilitiesSection .box-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
