@@ -5,7 +5,11 @@ import KTXC from "/KTXC.jpg";
 
 import CustomIcon from "../../components/CustomIcon";
 import LoginComponent from "../../components/Login/LoginComponent";
+import { useState } from "react";
+import RegisterComponent from "../../components/Register/RegisterComponent";
 const LandingPage = () => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
   return (
     <div className="landing-page relative min-h-screen">
       <header className="header-content ">
@@ -34,7 +38,12 @@ const LandingPage = () => {
             </ul>
           </nav>
           <div className="header-btn">
-            <button className="py-4 px-8 rounded-md cursor-pointer font-bold uppercase bg-orange-400">
+            <button
+              onClick={() => {
+                setShowLoginModal(true);
+              }}
+              className="py-4 px-8 rounded-md cursor-pointer font-bold uppercase bg-orange-400"
+            >
               Đăng nhập
             </button>
           </div>
@@ -56,23 +65,29 @@ const LandingPage = () => {
               được hàng loạt các tiện nghi để nâng cao chất lượng sống.
             </span>
           </div>
+          <button
+            onClick={setShowRegisterModal}
+            className="underline tracking-wide text-xl text-white bg-orange-500 py-4 px-10 mt-10 rounded-lg font-bold"
+          >
+            Đăng ký
+          </button>
         </div>
       </section>
-      <section className="aboutSection relative my-[100px]">
-        <div className="title p-32">
+      <section className="aboutSection relative py-36">
+        <div className="title mb-24">
           <h2 className="text-5xl font-bold  font-prata uppercase text-white text-center">
             Giới thiệu về chúng tôi
           </h2>
         </div>
         <div className="content-wrapper pb-20 w-4/5 flex  mx-auto">
-          <div className="img-side max-h-[600px] relative mt-[100px] z-10 shadow-[0_0_25px_1px_rgba(0,0,0,0.5)]">
+          <div className="img-side max-h-[814px] relative mt-[100px] z-4 shadow-[0_0_25px_1px_rgba(0,0,0,0.5)]">
             <img
               src="/imgSide.png"
               alt="imageBuilding.png"
               className="object-cover w-full h-full"
             />
           </div>
-          <div className="content-section  max-h-[600px] w-full mb-[100px] ml-[-100px] bg-white inline-block py-[100px] pl-[200px] pr-[100px]">
+          <div className="content-section  max-h-[814px] w-full mb-[100px] ml-[-100px] bg-white inline-block py-[100px] pl-[200px] pr-[100px]">
             <h2 className="content-title font-bold mb-5 text-orange-400 text-[45px]">
               Tầm nhìn của chúng tôi
             </h2>
@@ -91,21 +106,26 @@ const LandingPage = () => {
               </span>
             </div>
             <div className="btn-content mt-6">
-              <button className="font-semibold bg-orange-400 text-white uppercase py-3 px-5">
+              <button
+                onClick={() => {
+                  setShowRegisterModal(true);
+                }}
+                className="font-semibold bg-orange-400 text-white uppercase py-4 px-6 rounded-lg"
+              >
                 Đăng ký ngay
               </button>
             </div>
           </div>
         </div>
       </section>
-      <section className="dormsSection w-full px-32 py-52 bg-darkGray">
+      <section className="dormsSection w-full px-32 py-36 bg-darkGray">
         <div className="container mx-auto">
           <div className="title uppercase text-white font-bold">
             <h2 className="text-5xl  font-prata uppercase text-white text-center mb-[120px]">
               Chi tiết về kí túc xá
             </h2>
           </div>
-          <div className="grid grid-cols-3 gap-x-6 mb-20">
+          <div className="box-list gap-x-6 mb-20">
             <div className="dormRoom w-full h-[600px] relative">
               <div className="overlay"></div>
               <div className="imgRoom w-full h-full ">
@@ -618,7 +638,7 @@ const LandingPage = () => {
       <section className="facilitiesSection w-full px-32 py-36">
         <div className="container mx-auto">
           <div className="title uppercase text-white font-bold">
-            <h2 className="text-5xl  font-prata uppercase text-white text-center mb-[80px]">
+            <h2 className="text-5xl  font-prata uppercase text-white text-center mb-[120px]">
               Thông tin thêm về kí túc xá
             </h2>
           </div>
@@ -744,10 +764,8 @@ const LandingPage = () => {
                 <span>Số điện thoại:0852896171</span>
               </div>
               <div className="email mb-2">
-                <span>
-                  Email: khangb1906491@student.ctu.edu.vn -
-                  nvkhangcode@gmail.com
-                </span>
+                <span>Email: khangb1906491@student.ctu.edu.vn</span>
+                <span>nvkhangcode@gmail.com</span>
               </div>
               <div className="social-link mt-[20px] flex items-center gap-x-5">
                 <div className="github">
@@ -773,7 +791,14 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
-      <LoginComponent></LoginComponent>
+      <LoginComponent
+        open={showLoginModal}
+        handleClose={() => setShowLoginModal(false)}
+      ></LoginComponent>
+      <RegisterComponent
+        open={showRegisterModal}
+        handleClose={() => setShowRegisterModal(false)}
+      ></RegisterComponent>
     </div>
   );
 };

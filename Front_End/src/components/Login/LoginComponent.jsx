@@ -1,9 +1,86 @@
+import { useForm } from "react-hook-form";
 import "./Login.scss";
-const LoginComponent = () => {
-  return (
-    <div className="login">
-      <div className="overlay"></div>
-    </div>
+import ReactDOM from "react-dom";
+import InputText from "../Input/InputText";
+import { useDisableBodyScroll } from "../../hooks/useDisableBodyScrooll";
+const LoginComponent = ({ open = false, handleClose = () => {} }) => {
+  const { handleSubmit, control } = useForm();
+  useDisableBodyScroll(open);
+  const postData = (values) => {
+    console.log(values);
+  };
+  if (typeof document === "undefined") return <div className="modal"></div>;
+  return ReactDOM.createPortal(
+    <div
+      className={`${
+        open ? "active" : "opacity-0 invisible"
+      } modal fixed inset-0  flex items-center justify-center p-5 z-20`}
+    >
+      <div
+        onClick={() => {
+          handleClose();
+        }}
+        className="overlay absolute inset bg-blackBgOpacity w-full h-full"
+      ></div>
+      <form
+        onSubmit={handleSubmit(postData)}
+        className="modal-form relative bg-white max-w-[500px] p-10 w-full modal-content rounded-lg"
+      >
+        <div className="modal-close-btn p-2 -right-4 -top-4 bg-white rounded-full absolute">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6 cursor-pointer"
+            onClick={() => {
+              handleClose();
+            }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <h2 className=" mb-4 modal-title text-center font-bold text-3xl capitalize">
+          Đăng nhập
+        </h2>
+        <div
+          className="mb-8 w-full text-center border border-b-gray500 border-x-0 border-t-0
+          pb-4 tracking-wide
+        "
+        >
+          <span className="text-sm font-light">
+            Xin chào hãy đăng nhập vào tài khoản của bạn
+          </span>
+        </div>
+        <InputText
+          name="username"
+          id="username"
+          placeholder="Mã số sinh viên hoặc Email"
+          control={control}
+        >
+          Tên đăng nhập
+        </InputText>
+        <InputText
+          name="password"
+          id="password"
+          placeholder="*******"
+          control={control}
+        >
+          Mật khẩu
+        </InputText>
+        <div className="w-full text-center">
+          <button className="model-btn py-4 px-6 mt-4 font-bold bg-blue-500 text-white rounded-lg">
+            Đăng nhập
+          </button>
+        </div>
+      </form>
+    </div>,
+    document.querySelector("body")
   );
 };
 

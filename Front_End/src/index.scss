@@ -10,3 +10,7 @@
     @apply font-prata;
   }
 }
+
+.modal.active body {
+  overflow: hidden;
+}

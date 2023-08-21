@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[333],{1221:function(e){e.exports=JSON.parse('{"title":"Change Case","tippy":"","buttons":[{"label":"abc","value":"lower"},{"label":"Abc","value":"title"},{"label":"ABC","value":"upper"}]}')}}]);
+//# sourceMappingURL=e3f56de.modern.js.map

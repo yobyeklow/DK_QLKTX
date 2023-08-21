@@ -13,6 +13,7 @@ export default {
         darkGray: "#375c45",
         brownColor: "#a58356",
         tanColor: "#d8aa84",
+        blackBgOpacity: "rgb(0,0,0,0.5)",
       },
     },
   },
