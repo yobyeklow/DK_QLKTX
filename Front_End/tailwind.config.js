@@ -7,6 +7,7 @@ export default {
         multi: ["Mulish", "sans-serif"],
         prata: ["Prata", "serif"],
         gilda: ["Gilda Display", "serif"],
+        lexend: ["Lexend Deca", "sans-serif"],
       },
       colors: {
         bgColor: "#c7c6b3",

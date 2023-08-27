@@ -8,7 +8,7 @@ const InputText = ({ control, children, ...props }) => {
   return (
     <div className="flex flex-col gap-2 mb-5">
       <label
-        htmlFor={props.name}
+        htmlFor={props.name || props.id}
         className=" cursor-pointer w-max text-base font-semibold"
       >
         {children}:
@@ -23,8 +23,9 @@ const InputText = ({ control, children, ...props }) => {
     </div>
   );
 };
-InputText.PropType = {
+InputText.propTypes = {
   name: PropType.string.isRequired,
   control: PropType.node.isRequired,
+  children: PropType.string.isRequired,
 };
 export default InputText;

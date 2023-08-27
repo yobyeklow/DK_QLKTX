@@ -1,64 +1,30 @@
-.dashboard-header {
-  background-image: linear-gradient(to right, #2193b0, #6dd5ed);
-  height: 80px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
+.dashboard-content .content-box table,
+tr,
+td {
+  border-collapse: collapse;
+  border: 1px solid #ebebe4;
+  font-size: 15px;
 }
-.dashboard-header-links > li:hover {
-  cursor: pointer;
-  //   font-size: 17px;
-  color: #1b85a0;
+.sinhvien-info-box td,
+.sinhvien-info-box tr {
+  font-weight: 400;
+  font-size: 14px;
 }
-.header-left-wrapper .dropdownMenu .right-content span {
-  font-weight: 700;
+.sinhvien-info-box td {
+  padding: 5px;
+  button {
+    transition: all 0.5s ease-in-out;
+    position: relative;
+  }
+  button:hover {
+    color: #1f5ca8;
+    border-color: rgba(31, 93, 168, 0.8);
+    background-color: rgba(31, 93, 168, 0.15);
+  }
 }
-.dropdownMenu {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    top: -5px;
-    left: 32%;
-    // transform: translate(0px, 20px);
-    transform: rotate(45deg);
-    // top: 0;
-  }
-  .right-content p {
-    word-break: break-all;
-    // word-wrap: break-word;
+@media screen and (min-width: 1536px) {
+  .sinhvien-info .container {
+    max-width: 1320px;
   }
 }
-.dropdownMenu.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: 0.5s ease;
-}
-.dropdownMenu.inactive {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: 0.5s ease;
-}
-// .dropdown-details {
-//   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-//     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-//   transform: translate(-40px, 10px);
-// }
-// .dropdown-details::before {
-//   content: "";
-//   position: absolute;
-//   width: 20px;
-//   height: 20px;
-//   top: -15px;
-//   background-color: black;
-// }

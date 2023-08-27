@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-multi bg-bgColor;
+    @apply font-multi bg-bgColor overflow-hidden;
   }
   h1 {
     @apply font-prata;

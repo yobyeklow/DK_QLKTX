@@ -1,0 +1,45 @@
+.header-bar .bell-icon::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 100%;
+  top: -2px;
+  right: 0;
+}
+.header-bar .dropdown-menu {
+  position: absolute;
+  max-width: 300px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  background: white;
+  padding: 15px 10px;
+  top: 130%;
+  left: -250%;
+  border-radius: 5px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    top: -8px;
+    right: 24px;
+    transform: rotate(45deg);
+    border-right: transparent;
+    border-bottom: transparent;
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+  }
+
+  &.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+  }
+}
